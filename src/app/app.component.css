@@ -10,9 +10,14 @@ mat-sidenav{
 }
 
 #imageIcon{
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   color: white;
+}
+
+.mat-icon {
+  color: white;
+  transform: scale(1.5);
 }
 
 .mat-toolbar.mat-primary {
@@ -27,12 +32,11 @@ mat-divider{
 }
 
 .menu-buttons{
-  width: 80%;
+  width: 100%;
   display: flex;
-  //align-items: center;
   margin: auto;
   justify-content: flex-start ;
-  font-size: 1rem;
+  font-size: 1.05rem;
   padding-left: 30px;
 }
 
