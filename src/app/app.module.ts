@@ -24,13 +24,15 @@ import {MatTableModule} from "@angular/material/table";
 import {MatDialogModule} from '@angular/material/dialog';
 import { ParticipanteComponent } from './participante/participante.component';
 import { FamiliaComponent } from './familia/familia.component';
+import { FormFamiliaComponent } from './familia/form-familia/form-familia.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ParticipanteComponent,
-    FamiliaComponent
+    FamiliaComponent,
+    FormFamiliaComponent
   ],
   imports: [
     BrowserModule,
