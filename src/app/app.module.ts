@@ -22,11 +22,15 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatSelectModule} from "@angular/material/select";
 import {MatTableModule} from "@angular/material/table";
 import {MatDialogModule} from '@angular/material/dialog';
+import { ParticipanteComponent } from './participante/participante.component';
+import { FamiliaComponent } from './familia/familia.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParticipanteComponent,
+    FamiliaComponent
   ],
   imports: [
     BrowserModule,
