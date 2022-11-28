@@ -5,6 +5,7 @@ import {FormFamiliaComponent} from "./familia/form-familia/form-familia.componen
 import {ParticipanteComponent} from "./participante/participante.component"
 
 const routes: Routes = [
+  {path: '', component: FamiliaComponent},
   {path: 'familia', component: FamiliaComponent},
   {path: 'formfamilia', component: FormFamiliaComponent},
   {path: 'formfamilia/:id', component: FormFamiliaComponent},

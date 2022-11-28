@@ -25,6 +25,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ParticipanteComponent } from './participante/participante.component';
 import { FamiliaComponent } from './familia/familia.component';
 import { FormFamiliaComponent } from './familia/form-familia/form-familia.component';
+import {FamiliaModule} from './familia/familia.module';
+import {ParticipanteModule} from './participante/participante.module';
+
 
 
 @NgModule({
@@ -58,6 +61,8 @@ import { FormFamiliaComponent } from './familia/form-familia/form-familia.compon
         MatTableModule,
         MatDialogModule,
         MatSidenavModule,
+        FamiliaModule,
+        ParticipanteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
