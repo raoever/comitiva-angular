@@ -1,76 +1,39 @@
 .container-fluid{
-  padding: 16px 20px 16px 16px;
-  margin-left: 10px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 30px;
   alignment: center;
+  height: 100%;
 }
 
-#botaoCadastroCandidato{
-  margin-bottom: 16px;
+#botaoCadastroFamilia{
+  margin-bottom: 10px;
+  margin-right: 10em;
   float: right;
-  background-color: #007e80;
-  width: 180px!important;
   min-width: unset!important;
 }
 
-#botaoTodasFamilias{
-  margin-bottom: 16px;
-  float: right;
-  margin-right: 10px;
-  background-color: #007e80;
-  width: 180px!important;
-  min-width: unset!important;
-  color: white;
+.mat-mdc-card{
+  height: 100%;
+
 }
 
-.mat-card{
-  border-radius: 1em;
+.tituloCard{
+  display: float;
+  padding:10px;
+  margin-left: 20px;
+  margin-top: 10px;
 }
 
-.mat-table
-{
-  background-color:transparent!important;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 1em;
-}
-table tr:last-child td /*To remove the last border*/
-{
-  border-bottom:0 solid
+.gridAlign{
+  margin-left: 10em;
+  margin-right: 10em;
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
-.mat-header-cell{
-  justify-content: center;
-  font-size: 15px;
-  font-weight: bolder;
-  text-align: center !important;
-  background-color: #004853;
-  color: white;
-}
-
-.mat-header-cell:first-child {
-  border-top-left-radius: 1em;
-}
-
-.mat-header-cell:last-child{
-  border-top-right-radius: 1em;
-}
-
-.mat-cell{
-  justify-content: center;
-  text-align: center !important;
-}
-
-#iconeAcoes{
-  display: flex;
-  justify-content: center;
-}
 
 

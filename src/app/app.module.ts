@@ -3,7 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 
+import { jqxGridModule } from 'jqwidgets-ng/jqxgrid';
+import { jqxButtonModule } from 'jqwidgets-ng/jqxbuttons';
+import { jqxCheckBoxModule } from 'jqwidgets-ng/jqxcheckbox';
+import { jqxPanelModule } from 'jqwidgets-ng/jqxpanel';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {HttpClientModule} from "@angular/common/http";
@@ -39,32 +44,40 @@ import {ParticipanteModule} from './participante/participante.module';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    jqxGridModule,
+    jqxCheckBoxModule,
+    jqxButtonModule,
+    jqxPanelModule,
+
     AppRoutingModule,
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        FormsModule,
-        MatTabsModule,
-        MatSortModule,
-        MatStepperModule,
-        MatListModule,
-        MatIconModule,
-        MatMenuModule,
-        MatSelectModule,
-        MatTableModule,
-        MatDialogModule,
-        MatSidenavModule,
-        FamiliaModule,
-        ParticipanteModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+    MatTabsModule,
+    MatSortModule,
+    MatStepperModule,
+    MatListModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatTableModule,
+    MatDialogModule,
+    MatSidenavModule,
+    jqxGridModule,
+    FamiliaModule,
+    ParticipanteModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ AppComponent ]
 })
 export class AppModule { }

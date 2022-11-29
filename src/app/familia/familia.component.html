@@ -1,167 +1,18 @@
 <div class="container-fluid">
   <mat-card>
-    <mat-card-title>Família</mat-card-title>
-
-<!--    <mat-stepper linear #stepper1>-->
-<!--      <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">-->
-<!--        <form #form="ngForm" [formGroup]="firstFormGroup">-->
-<!--          <ng-template matStepLabel>Escolha o tipo de consulta</ng-template>-->
-<!--          <mat-form-field appearance="fill">-->
-<!--            <mat-label>Selecione</mat-label>-->
-<!--            <mat-select formControlName="tipo" required>-->
-<!--              <mat-option value="cargo">Cargo</mat-option>-->
-<!--              <mat-option value="cidade">Cidade</mat-option>-->
-<!--              <mat-option value="uf">UF</mat-option>-->
-<!--            </mat-select>-->
-<!--          </mat-form-field>-->
-<!--          <div>-->
-<!--            <button mat-button matStepperNext>Próximo</button>-->
-<!--          </div>-->
-<!--        </form>-->
-<!--      </mat-step>-->
-<!--      <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">-->
-<!--        <form [formGroup]="secondFormGroup">-->
-<!--          <ng-template matStepLabel>Entre com o parâmetro</ng-template>-->
-<!--          <mat-form-field appearance="fill">-->
-<!--            <mat-label>Parâmetro</mat-label>-->
-<!--            <input matInput formControlName="parametro" required>-->
-<!--          </mat-form-field>-->
-<!--          <div>-->
-<!--            <button mat-button matStepperPrevious>Voltar</button>-->
-<!--            <button mat-button matStepperNext>Próximo</button>-->
-<!--          </div>-->
-<!--        </form>-->
-<!--      </mat-step>-->
-<!--      <mat-step>-->
-<!--        <ng-template matStepLabel>Finalizar</ng-template>-->
-<!--        <p>Deseja fazer a consulta?</p>-->
-<!--        <div>-->
-<!--          <button mat-button matStepperPrevious>Voltar</button>-->
-<!--          <button mat-button (click)="stepper1.reset()">Reset</button>-->
-<!--&lt;!&ndash;          <button mat-button (click)="consultarCandidatos();stepper1.reset()">Consultar</button>&ndash;&gt;-->
-<!--        </div>-->
-<!--      </mat-step>-->
-<!--    </mat-stepper>-->
-<!--    {{ this.firstFormGroup.value | json }}-->
-<!--    {{ this.secondFormGroup.value | json }}-->
-
-    <button id="botaoCadastroFamilia">
-      <a class="menu-link" href="formfamilia">Cadastrar Família</a>
-    </button>
-
-    <button id="botaoTodasFamilias" (click)="todasFamilias()">
-      Todos Candidato
-    </button>
-
-<!--    <table mat-table [dataSource]="familias" class="mat-elevation-z8">-->
-
-<!--      <ng-container matColumnDef="nomeCandidato">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Nome Candidato</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.nomeCandidato}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="loginCandidato">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Login</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.loginCandidato}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="senha">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Senha</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.senha}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="cpf">-->
-<!--        <th mat-header-cell *matHeaderCellDef>CPF</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.cpf}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="rg">-->
-<!--        <th mat-header-cell *matHeaderCellDef>RG</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.rg}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="dataEmissaoRG">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Data Emissão</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.dataEmissaoRG}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="dataNascimento">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Nascimento</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.dataNascimento}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="sexo">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Sexo</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.sexo}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="estadoCivil">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Estado Civil</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.estadoCivil}} </td>-->
-<!--      </ng-container>-->
-<!--      <ng-container matColumnDef="endereco">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Endereço</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.endereco}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="bairro">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Bairro</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.bairro}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="cidade">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Cidade</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.cidade}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="uf">-->
-<!--        <th mat-header-cell *matHeaderCellDef>UF</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.uf}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="cep">-->
-<!--        <th mat-header-cell *matHeaderCellDef>CEP</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.cep}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="email">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Email</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.email}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="telefone">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Telefone</th>-->
-<!--        <td mat-cell *matCellDef="let candidato"> {{candidato.telefone}} </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="maisInformacoes">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Mais Info</th>-->
-<!--        <td mat-cell *matCellDef="let candidato">-->
-<!--          <mat-icon (click)="moreInfo(candidato)">image_search</mat-icon>-->
-<!--        </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="experiencias">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Experiência</th>-->
-<!--        <td mat-cell *matCellDef="let candidato">-->
-<!--          <mat-icon (click)="experienciaCandidato(candidato)">search</mat-icon>-->
-<!--        </td>-->
-<!--      </ng-container>-->
-
-<!--      <ng-container matColumnDef="acoes">-->
-<!--        <th mat-header-cell *matHeaderCellDef>Ações</th>-->
-<!--        <td mat-cell *matCellDef="let candidato">-->
-<!--          <mat-icon [matMenuTriggerFor]="menu">add_circle_outline</mat-icon>-->
-<!--          <mat-menu #menu="matMenu" xPosition="before">-->
-<!--            <button mat-menu-item (click)="editCandidato(candidato.id)"><mat-icon>edit</mat-icon>Editar</button>-->
-<!--            <button mat-menu-item (click)="deletarCandidato(candidato)"><mat-icon>delete</mat-icon>Deletar</button>-->
-<!--          </mat-menu>-->
-<!--        </td>-->
-<!--      </ng-container>-->
-
-<!--      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
-<!--      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
-<!--    </table>-->
+    <div class="tituloCard" titulo>
+      <h1>Famílias</h1>
+      <jqxButton id="botaoCadastroFamilia" [width]='150' [height]='40'>
+        <a class="menu-link" href="formfamilia">Cadastrar Família</a>
+      </jqxButton>
+    </div>
+    <div class="gridAlign">
+      <jqxGrid #myGrid
+               [width]="getWidth()" [filterbarmode]="'simple'" [showfilterbar]="true" [source]="source"
+               [columns]="columns" [filterable]="true"
+               [sortable]="true">
+      </jqxGrid>
+    </div>
   </mat-card>
 </div>
 
