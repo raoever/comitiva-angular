@@ -4,9 +4,11 @@
     <mat-icon *ngIf="sidenav.opened">close</mat-icon>
   </button>
   <span style="font-family: CAC Pinafore; font-size:45px;">Comitiva Esperança</span>
-  <div style="float: right">
-    <Button>Logout</Button>
-  </div>
+  <span class="spacer"></span>
+
+  <jqxButton [template]="'link'" [width]="80">Logout</jqxButton>
+
+
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav="matSidenav" mode="side" opened>
