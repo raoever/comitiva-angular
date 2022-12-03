@@ -12,11 +12,31 @@
     </div>
     <div class="gridAlign">
       <jqxGrid #myGrid
-               [width]="'600px'" [height]="'600px'" [filterbarmode]="'simple'" [showfilterbar]="true"
-               [source]="source"
-               [columns]="columns" [filterable]="true"
-               [sortable]="true">
+        [width]="getWidth()"
+        [autoheight]="true"
+        [source]="source"
+        [columns]="columns"
+        [showfilterbar]="true"
+        [filterbarmode]="'simple'"
+        [filterable]="true"
+        [sortable]="true"
+        [editable]="true"
+        [pageable]="true"
+        [autorowheight]="true"
+               >
+
+<!--        [rowdetails]="true"-->
+<!--        [initrowdetails]="initRowDetails"-->
+<!--        [ready]="ready"-->
+<!--        [rowdetailstemplate]="rowdetailstemplate">-->
+<!--        [commandcolumn]="true"-->
+
       </jqxGrid>
+      <div style="margin-top: 20px">
+        <div style="margin-left: 10px; float: left">
+          <jqxButton (onClick)="btnOnClick()">Print</jqxButton>
+        </div>
+      </div>
     </div>
   </mat-card>
 </div>
