@@ -11,7 +11,7 @@ import {Familia} from "../models/familia";
 })
 export class FamiliaService {
 
-  url = 'https://comitiva-back.onrender.com/cadastro';
+  url = 'https://comitiva.cyclic.app/cadastro'; //https://web-production-0daa.up.railway.app/cadastro
 
   constructor(private httpClient: HttpClient) {}
 
