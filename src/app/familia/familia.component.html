@@ -11,32 +11,29 @@
       </div>
     </div>
     <div class="gridAlign">
-      <jqxGrid #myGrid
+      <jqxGrid
+        [theme]="'material'"
+        #myGrid
         [width]="getWidth()"
         [autoheight]="true"
-        [source]="source"
+        [source]="familiasAdapter"
         [columns]="columns"
-        [showfilterbar]="true"
-        [filterbarmode]="'simple'"
+        [rowdetails]="true"
+        [rowsheight]="35"
+        [initrowdetails]="initRowDetails"
+        [ready]="ready"
+        [rowdetailstemplate]="rowdetailstemplate"
         [filterable]="true"
         [sortable]="true"
         [editable]="true"
         [pageable]="true"
-        [autorowheight]="true"
-               >
-
-<!--        [rowdetails]="true"-->
-<!--        [initrowdetails]="initRowDetails"-->
-<!--        [ready]="ready"-->
-<!--        [rowdetailstemplate]="rowdetailstemplate">-->
-<!--        [commandcolumn]="true"-->
-
+        [autorowheight]="true">
       </jqxGrid>
-      <div style="margin-top: 20px">
-        <div style="margin-left: 10px; float: left">
-          <jqxButton (onClick)="btnOnClick()">Print</jqxButton>
-        </div>
-      </div>
+<!--      <div style="margin-top: 20px">-->
+<!--        <div style="margin-left: 10px; float: left">-->
+<!--          <jqxButton (onClick)="btnOnClick()">Print</jqxButton>-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </mat-card>
 </div>

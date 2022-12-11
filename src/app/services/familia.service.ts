@@ -11,8 +11,7 @@ import {Familia} from "../models/familia";
 })
 export class FamiliaService {
 
-  url = 'https://comitiva.cyclic.app/cadastro'; //https://web-production-0daa.up.railway.app/cadastro
-
+  url = 'https://comitiva.cyclic.app'; //https://web-production-0daa.up.railway.app/cadastro
   constructor(private httpClient: HttpClient) {}
 
   httpOptions = {
@@ -20,9 +19,18 @@ export class FamiliaService {
   };
 
   getFamilias(): Observable<Familia[]> {
-    return this.httpClient
-      .get<Familia[]>(this.url)
-      .pipe(retry(2), catchError(this.handleError));
+      return this.httpClient
+        .get<Familia[]>(`${this.url}/cadastro`)
+        .pipe(retry(2), catchError(this.handleError));
+  }
+
+  delFamilia(id: number): Observable<Familia> {
+    console.log('chegou no serviço del. ' + id);
+    console.log(`${this.url}/cadastro/familia/${id}`);
+    return this.httpClient.delete<Familia>(
+      `${this.url}/cadastro/familia/${id}`
+    );
+    //  .pipe(retry(2), catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse) {
