@@ -25,12 +25,9 @@ export class FamiliaService {
   }
 
   delFamilia(id: number): Observable<Familia> {
-    console.log('chegou no serviço del. ' + id);
-    console.log(`${this.url}/cadastro/familia/${id}`);
-    return this.httpClient.delete<Familia>(
-      `${this.url}/cadastro/familia/${id}`
-    );
-    //  .pipe(retry(2), catchError(this.handleError));
+    return this.httpClient
+      .delete<Familia>(`${this.url}/cadastro/familia/${id}`)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse) {

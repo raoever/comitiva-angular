@@ -178,7 +178,9 @@ ngAfterViewInit() {
         buttonclick: (row: number): void => {
           this.editrow = row;
           let dataRecord = this.myGrid.getrowdata(this.editrow);
-          this.familiaService.delFamilia(dataRecord._id);
+          this.familiaService.delFamilia(dataRecord._id).subscribe(() => console.log("user deleted"));
+          window.location.reload();
+          alert("Família Deletada.")
         },
       },
     ];
@@ -205,7 +207,10 @@ ngAfterViewInit() {
                   '<meta charset="utf-8" />\n' +
                   '<title>jQWidgets Grid</title>\n' +
                   '</head>\n' +
-                  '<body>\n' + gridContent + '\n</body>\n</html>';
+                  '<body>\n' +
+                  '<h1>Lista de Famílias</h1>\n' +
+                   gridContent +
+                   '\n</body>\n</html>';
           document.write(pageContent);
           document.close();
           // @ts-ignore
