@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <mat-card>
     <div>
-      <div class="tituloCard" titulo>
+      <div class="tituloCard">
         <h1>Famílias</h1>
       </div>
       <div>
@@ -24,6 +24,8 @@
         [ready]="ready"
         [rowdetailstemplate]="rowdetailstemplate"
         [filterable]="true"
+        [filterbarmode]="'simple'"
+        [showfilterbar]="true"
         [sortable]="true"
         [editable]="true"
         [pageable]="true"

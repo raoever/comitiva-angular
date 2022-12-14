@@ -6,20 +6,54 @@
           <mat-card-title>Dados Pessoais do Pai</mat-card-title>
           <br>
           <input ngModel formControlName="id" hidden>
+
           <mat-form-field class="form-field" appearance="outline">
-            <mat-label>Nome do Pai</mat-label>
+            <mat-label>Nome Pai</mat-label>
             <input ngModel formControlName="paiNome" matInput>
           </mat-form-field>
+
           <mat-form-field class="form-field" appearance="outline">
-            <mat-label>Contato do Pai</mat-label>
+            <mat-label>Nascimento Pai</mat-label>
+            <input ngModel formControlName="paiNascimento" type="date" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Turma Pai</mat-label>
+            <input ngModel formControlName="paiTurma" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Ocupação Pai</mat-label>
+            <input ngModel formControlName="paiOcupacao" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Contato Pai</mat-label>
             <input ngModel formControlName="paiContato" matInput>
           </mat-form-field>
+
           <mat-form-field class="form-field" appearance="outline">
-            <mat-label>Nome da Mãe</mat-label>
+            <mat-label>Nome Mãe</mat-label>
             <input ngModel formControlName="maeNome" matInput>
           </mat-form-field>
+
           <mat-form-field class="form-field" appearance="outline">
-            <mat-label>Contato da Mãe</mat-label>
+            <mat-label>Nascimento Mãe</mat-label>
+            <input ngModel formControlName="maeNascimento" type="date" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Turma Mãe</mat-label>
+            <input ngModel formControlName="maeTurma" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Ocupação Mãe</mat-label>
+            <input ngModel formControlName="maeOcupacao" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Contato Mãe</mat-label>
             <input ngModel formControlName="maeContato" matInput>
           </mat-form-field>
           <br>
@@ -36,13 +70,55 @@
               <mat-form-field class="form-field" appearance="outline" hidden>
                 <input matInput formControlName="dependenteId">
               </mat-form-field>
+
               <mat-form-field class="form-field" appearance="outline">
-                <mat-label>Dependente</mat-label>
+                <mat-label>Nome Dependente</mat-label>
                 <input matInput formControlName="dependenteNome">
               </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Nascimento Dependente</mat-label>
+                <input ngModel formControlName="dependenteNascimento" type="date" matInput>
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Parentesco</mat-label>
+                <input matInput formControlName="dependenteParentesco">
+              </mat-form-field>
+
               <mat-form-field class="form-field" appearance="outline">
                 <mat-label>Turma Dependente</mat-label>
                 <input matInput formControlName="dependenteTurma">
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Contato Dependente</mat-label>
+                <input matInput formControlName="dependenteContato">
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Estuda?</mat-label>
+                <input matInput formControlName="estuda">
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Escolaridade</mat-label>
+                <input matInput formControlName="escolaridade">
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Tamanho Pé</mat-label>
+                <input matInput formControlName="tamanhoPe">
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Tamanho Calça</mat-label>
+                <input matInput formControlName="tamanhoCalca">
+              </mat-form-field>
+
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Tamanho Camisa</mat-label>
+                <input matInput formControlName="tamanhoCamisa">
               </mat-form-field>
 
               <div class="divDeletar">

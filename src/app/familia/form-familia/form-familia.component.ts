@@ -24,11 +24,17 @@ export class FormFamiliaComponent {
   constructor(private fb: FormBuilder, private familiaService: FamiliaService, private route: ActivatedRoute, private router: Router) {
     this.familiaForm = this.fb.group({
       id: '',
+      endereco: '',
       paiNome: '',
+      paiNascimento: '',
+      paiTurma: '',
+      paiOcupacao: '',
       paiContato: '',
       maeNome: '',
+      maeNascimento: '',
+      maeTurma: '',
+      maeOcupacao: '',
       maeContato: '',
-      endereco: '',
       dependentes: this.fb.array([]),
     });
   }
@@ -79,7 +85,15 @@ export class FormFamiliaComponent {
     return this.fb.group({
       dependenteId: '',
       dependenteNome: '',
+      dependenteNascimento: '',
+      dependenteParentesco: '',
       dependenteTurma: '',
+      dependenteContato: '',
+      estuda: '',
+      escolaridade: '',
+      tamanhoPe: '',
+      tamanhoCalca: '',
+      tamanhoCamisa: ''
     });
   }
 
@@ -102,8 +116,16 @@ export class FormFamiliaComponent {
     document.getElementById('divDependente').hidden = false;
     this.dependentes().push(this.fb.group({
       dependenteId: dependente.dependenteId,
-      nomeDependente: dependente.dependenteNome,
-      turmaDependente: dependente.dependenteTurma
+      dependenteNome: dependente.dependenteNome,
+      dependenteNascimento: dependente.dependenteNascimento,
+      dependenteParentesco: dependente.dependenteParentesco,
+      dependenteTurma: dependente.dependenteTurma,
+      dependenteContato: dependente.dependenteContato,
+      estuda: dependente.estuda,
+      escolaridade: dependente.escolaridade,
+      tamanhoPe: dependente.tamanhoPe,
+      tamanhoCalca: dependente.tamanhoCalca,
+      tamanhoCamisa: dependente.tamanhoCamisa
     }));
   }
 

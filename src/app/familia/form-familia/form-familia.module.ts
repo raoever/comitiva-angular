@@ -5,7 +5,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatButtonModule} from "@angular/material/button";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {MatCheckboxModule} from "@angular/material/checkbox";
@@ -30,7 +30,8 @@ import { FormFamiliaRoutingModule } from './form-familia-routing.module';
     MatButtonToggleModule,
     FormsModule,
     MatDialogModule,
-   MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
   ]
 })
 export class FormFamiliaModule { }
