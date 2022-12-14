@@ -132,14 +132,14 @@ export class FormFamiliaComponent {
 
   onSubmit() {
     console.log(this.familiaForm.value);
-//     this.familiaService.addFamilia(this.familiaForm.value).subscribe(
-//       (response: familia) => {
-//         console.log(response);
-//         this.router.navigate(['/familia/']);
-//       },
-//       (error: HttpErrorResponse) => {
-//         alert(error.message);
-//       }
-//     );
+    this.familiaService.addFamilia(this.familiaForm.value).subscribe(
+      (response: Familia) => {
+        console.log(response);
+        this.router.navigate(['/familia/']);
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }

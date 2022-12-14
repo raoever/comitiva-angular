@@ -30,6 +30,10 @@ export class FamiliaService {
       .pipe(retry(2), catchError(this.handleError));
   }
 
+  public addFamilia(familia: Familia): Observable<Familia> {
+      return this.httpClient.post<Familia>(`${this.url}/cadastro/familia`, familia)
+    }
+
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

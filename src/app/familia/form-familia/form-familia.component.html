@@ -8,13 +8,18 @@
           <input ngModel formControlName="id" hidden>
 
           <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Endereço</mat-label>
+            <input ngModel formControlName="endereco" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
             <mat-label>Nome Pai</mat-label>
             <input ngModel formControlName="paiNome" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Nascimento Pai</mat-label>
-            <input ngModel formControlName="paiNascimento" type="date" matInput>
+            <input ngModel formControlName="paiNascimento" type="text" date='dd-MM-yyyy' matInput placeholder="dd/mm/yyyy">
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
@@ -39,7 +44,7 @@
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Nascimento Mãe</mat-label>
-            <input ngModel formControlName="maeNascimento" type="date" matInput>
+            <input ngModel formControlName="maeNascimento" type="text" date='dd/MM/yyyy' matInput placeholder="dd/mm/yyyy">
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">

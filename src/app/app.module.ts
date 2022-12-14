@@ -32,7 +32,7 @@ import { FamiliaComponent } from './familia/familia.component';
 import { FormFamiliaComponent } from './familia/form-familia/form-familia.component';
 import {FamiliaModule} from './familia/familia.module';
 import {ParticipanteModule} from './participante/participante.module';
-import {FamiliaService} from './services/familia.service';
+import {FamiliaService} from './services/familia.service'
 
 
 
