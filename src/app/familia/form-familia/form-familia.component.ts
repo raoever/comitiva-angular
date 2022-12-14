@@ -135,7 +135,7 @@ export class FormFamiliaComponent {
     this.familiaService.addFamilia(this.familiaForm.value).subscribe(
       (response: Familia) => {
         console.log(response);
-        this.router.navigate(['/familia/']);
+//         this.router.navigate(['/familia/']);
       },
       (error: HttpErrorResponse) => {
         alert(error.message);

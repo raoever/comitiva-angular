@@ -13,6 +13,5 @@ export interface Familia{
   maeTurma: string;
   maeOcupacao: string;
   maeContato: string;
-
   dependentes: Dependente[];
 }

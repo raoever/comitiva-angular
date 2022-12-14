@@ -32,11 +32,11 @@ ngAfterViewInit() {
     localdata: null,
     datafields: [
       { name: '_id', type: 'string' },
-      { name: 'nomePai', map: 'pai>nomePai', type: 'string' },
-      { name: 'contatoPai', map: 'pai>contatoPai', type: 'string' },
-      { name: 'nomeMae', map: 'mae>nomeMae', type: 'string' },
-      { name: 'contatoMae', map: 'mae>contatoMae', type: 'string' },
       { name: 'endereco', type: 'string' },
+      { name: 'paiNome', type: 'string' },
+      { name: 'paiContato', type: 'string' },
+      { name: 'maeNome', type: 'string' },
+      { name: 'maeContato', type: 'string' },
       { name: 'dependentes', type: 'object' },
     ],
     datatype: 'json',
@@ -53,8 +53,8 @@ ngAfterViewInit() {
 
   dependentesSource: any = {
       datafields: [
-        { name: 'nomeDependente', type: 'object' },
-        { name: 'parentesco', type: 'object' },
+        { name: 'dependenteNome', type: 'object' },
+        { name: 'dependenteParentesco', type: 'object' },
       ],
       datatype: 'json',
   };
@@ -99,8 +99,8 @@ ngAfterViewInit() {
     }
     let dependentesSource = {
       datafields: [
-        { name: 'nomeDependente', type: 'object' },
-        { name: 'parentesco', type: 'object' },
+        { name: 'dependenteNome', type: 'string' },
+        { name: 'dependenteParentesco', type: 'string' },
       ],
       localdata: dependentesbyid,
     };
@@ -112,8 +112,8 @@ ngAfterViewInit() {
         height: 200,
         source: nestedGridAdapter,
         columns: [
-          { text: 'Dependentes', datafield: 'nomeDependente', width: 200 },
-          { text: 'Parentesco', datafield: 'parentesco', width: 200 },
+          { text: 'Dependentes', datafield: 'dependenteNome', width: 200 },
+          { text: 'Parentesco', datafield: 'dependenteParentesco', width: 200 },
         ],
       };
 
@@ -145,10 +145,10 @@ ngAfterViewInit() {
 
   columns: any[] = [
       //{ text: 'ID', datafield: '_id', width: '40%' },
-      { text: 'Pai', datafield: 'nomePai', width: '20%' },
-      { text: 'Contato', datafield: 'contatoPai', width: '10%' },
-      { text: 'Mãe', datafield: 'nomeMae', width: '20%' },
-      { text: 'Contato', datafield: 'contatoMae', width: '10%' },
+      { text: 'Pai', datafield: 'paiNome', width: '20%' },
+      { text: 'Contato', datafield: 'paiContato', width: '10%' },
+      { text: 'Mãe', datafield: 'maeNome', width: '20%' },
+      { text: 'Contato', datafield: 'maeContato', width: '10%' },
       { text: 'Encereço', datafield: 'endereco', width: '20%' },
       {
         text: 'Edit',
