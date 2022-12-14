@@ -1,1 +1,41 @@
-<p>participante works!</p>
+<div class="container-fluid">
+  <mat-card>
+    <div>
+      <div class="tituloCard" titulo>
+        <h1>Participantes</h1>
+      </div>
+      <div>
+        <jqxButton id="botaoCadastro" [width]='130' [height]='30'>
+          <a class="menu-link" href="formfamilia">Cadastrar Família</a>
+        </jqxButton>
+      </div>
+    </div>
+    <div class="gridAlign">
+      <jqxGrid
+        [theme]="'material'"
+        #myGrid
+        [width]="getWidth()"
+        [autoheight]="true"
+        [source]="familiasAdapter"
+        [columns]="columns"
+        [rowdetails]="true"
+        [rowsheight]="35"
+        [initrowdetails]="initRowDetails"
+        [ready]="ready"
+        [rowdetailstemplate]="rowdetailstemplate"
+        [filterable]="true"
+        [sortable]="true"
+        [editable]="true"
+        [pageable]="true"
+        [autorowheight]="true">
+      </jqxGrid>
+<!--      <div style="margin-top: 20px">-->
+<!--        <div style="margin-left: 10px; float: left">-->
+<!--          <jqxButton (onClick)="btnOnClick()">Print</jqxButton>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+  </mat-card>
+</div>
+
+

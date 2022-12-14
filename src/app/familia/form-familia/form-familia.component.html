@@ -1,1 +1,75 @@
-<p>form-familia works!</p>
+<div class="container-fluid">
+  <mat-card>
+    <div class="form-container">
+      <form [formGroup]="familiaForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+          <mat-card-title>Dados Pessoais do Pai</mat-card-title>
+          <br>
+          <input ngModel formControlName="id" hidden>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Nome do Pai</mat-label>
+            <input ngModel formControlName="paiNome" matInput>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Contato do Pai</mat-label>
+            <input ngModel formControlName="paiContato" matInput>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Nome da Mãe</mat-label>
+            <input ngModel formControlName="maeNome" matInput>
+          </mat-form-field>
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Contato da Mãe</mat-label>
+            <input ngModel formControlName="maeContato" matInput>
+          </mat-form-field>
+          <br>
+
+        </mat-card>
+        <br>
+
+        <div formArrayName="dependentes" id="divDependente" hidden>
+          <mat-card>
+            <mat-card-title>Dependentes</mat-card-title>
+            <br>
+            <div *ngFor="let exp of dependentes().controls; let i = index" [formGroupName]="i">
+              <h3 style="padding-left: 30px;"><strong>Dependente {{i + 1}}</strong></h3>
+              <mat-form-field class="form-field" appearance="outline" hidden>
+                <input matInput formControlName="dependenteId">
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Dependente</mat-label>
+                <input matInput formControlName="dependenteNome">
+              </mat-form-field>
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Turma Dependente</mat-label>
+                <input matInput formControlName="dependenteTurma">
+              </mat-form-field>
+
+              <div class="divDeletar">
+                <mat-icon (click)="removeDependente(i)" style="float:right; padding-right:50px">delete</mat-icon>
+              </div>
+              <br>
+            </div>
+          </mat-card>
+        </div>
+        <br/>
+        {{ this.familiaForm.value | json }}
+        <br>
+        <div class="buttonForm">
+          <button
+            mat-raised-button
+            type="button"
+            color="primary"
+            (click)="addDependente()"
+          >
+            Adicionar Dependente
+          </button>
+        </div>
+        <br/>
+        <div class="buttonForm">
+          <button mat-raised-button type="submit" color="warn">Submit</button>
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</div>

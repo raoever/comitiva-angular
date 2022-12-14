@@ -1,0 +1,30 @@
+.container-fluid{
+  padding: 16px 20px 16px 16px;
+  margin-left: 10px;
+  alignment: center;
+}
+
+.form-container{
+  width: 750px;
+  margin: 0px auto;
+  padding: 16px 20px 16px 16px;
+}
+
+.mat-mdc-card-title{
+  padding: 16px 20px 0px 16px;
+}
+
+.form-field{
+  padding: 0px 30px 0px 30px;
+  display: block;
+}
+
+.buttonForm {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.divDeletar {
+  display: flex;
+  justify-content: flex-end;
+}

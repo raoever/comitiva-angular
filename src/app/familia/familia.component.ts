@@ -7,7 +7,6 @@ import {Router} from "@angular/router";
 import {Familia} from "../models/familia"
 import {FamiliaService} from "../services/familia.service"
 import { jqxGridComponent }  from 'jqwidgets-ng/jqxgrid';
-// import { jqxPanelComponent } from 'jqwidgets-ng/jqxpanel';
 
 @Component({
   selector: 'app-familia',
@@ -188,7 +187,6 @@ ngAfterViewInit() {
   getFamilias() {
     this.familiaService.getFamilias().subscribe((familias: Familia[]) => {
       this.source.localdata = familias;
-//       this.dependentesSource.localdata = familias;
       console.log(familias);
       this.myGrid.updatebounddata();
     });

@@ -39,10 +39,9 @@ import {FamiliaService} from './services/familia.service'
 @NgModule({
   declarations: [
     AppComponent,
-    ParticipanteComponent,
     FamiliaComponent,
-    FormFamiliaComponent,
-
+    ParticipanteComponent,
+    FormFamiliaComponent
   ],
   imports: [
     BrowserModule,
