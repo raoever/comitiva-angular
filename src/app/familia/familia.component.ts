@@ -21,7 +21,7 @@ familias: any[] = [];
 @ViewChild('myGrid', { static: false }) myGrid: jqxGridComponent;
 editrow: number = -1;
 
-constructor(private familiaService: FamiliaService) { }
+constructor(private familiaService: FamiliaService, private router: Router) { }
 
 ngAfterViewInit() {
     this.myGrid.showloadelement();
@@ -40,6 +40,7 @@ ngAfterViewInit() {
       { name: 'dependentes', type: 'object' },
     ],
     datatype: 'json',
+    pagesize: 20,
   };
 
   familiasAdapter: any = new jqx.dataAdapter(this.source);
@@ -163,7 +164,8 @@ ngAfterViewInit() {
           //get the data and append in to the inputs
           this.editrow = row;
           let dataRecord = this.myGrid.getrowdata(this.editrow);
-          alert('edita: ' + dataRecord._id);
+          this.router.navigate(['/formfamilia/', dataRecord._id]);
+//           alert('edita: ' + dataRecord._id);
         },
       },
       {
