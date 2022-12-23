@@ -1,65 +1,65 @@
 <div class="container-fluid">
-  <mat-card>
+  <mat-card fxFlex="calc(33%-25px)" fxFlex.sm="calc(50%-25px)">
     <div class="form-container">
       <form [formGroup]="familiaForm" (ngSubmit)="onSubmit()">
         <mat-card>
           <mat-card-title>Dados Pessoais do Pai</mat-card-title>
           <br>
-          <input ngModel formControlName="id" hidden>
+          <input  formControlName="id" hidden>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Endereço</mat-label>
-            <input ngModel formControlName="endereco" matInput>
+            <input  formControlName="endereco" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Nome Pai</mat-label>
-            <input ngModel formControlName="paiNome" matInput>
+            <input  formControlName="paiNome" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Nascimento Pai</mat-label>
-            <input ngModel formControlName="paiNascimento" type="text" date='dd-MM-yyyy' matInput placeholder="dd/mm/yyyy">
+            <input formControlName="paiNascimento" type="text" date='dd-MM-yyyy' matInput placeholder="dd/mm/yyyy">
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Turma Pai</mat-label>
-            <input ngModel formControlName="paiTurma" matInput>
+            <input  formControlName="paiTurma" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Ocupação Pai</mat-label>
-            <input ngModel formControlName="paiOcupacao" matInput>
+            <input  formControlName="paiOcupacao" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Contato Pai</mat-label>
-            <input ngModel formControlName="paiContato" matInput>
+            <input  formControlName="paiContato" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Nome Mãe</mat-label>
-            <input ngModel formControlName="maeNome" matInput>
+            <input  formControlName="maeNome" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Nascimento Mãe</mat-label>
-            <input ngModel formControlName="maeNascimento" type="text" date='dd/MM/yyyy' matInput placeholder="dd/mm/yyyy">
+            <input formControlName="maeNascimento" type="text" date='dd/MM/yyyy' matInput placeholder="dd/mm/yyyy">
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Turma Mãe</mat-label>
-            <input ngModel formControlName="maeTurma" matInput>
+            <input  formControlName="maeTurma" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Ocupação Mãe</mat-label>
-            <input ngModel formControlName="maeOcupacao" matInput>
+            <input  formControlName="maeOcupacao" matInput>
           </mat-form-field>
 
           <mat-form-field class="form-field" appearance="outline">
             <mat-label>Contato Mãe</mat-label>
-            <input ngModel formControlName="maeContato" matInput>
+            <input  formControlName="maeContato" matInput>
           </mat-form-field>
           <br>
 
@@ -72,9 +72,9 @@
             <br>
             <div *ngFor="let exp of dependentes().controls; let i = index" [formGroupName]="i">
               <h3 style="padding-left: 30px;"><strong>Dependente {{i + 1}}</strong></h3>
-              <mat-form-field class="form-field" appearance="outline" hidden>
-                <input matInput formControlName="dependenteId">
-              </mat-form-field>
+<!--              <mat-form-field class="form-field" appearance="outline" hidden>-->
+<!--                <input matInput formControlName="dependenteId">-->
+<!--              </mat-form-field>-->
 
               <mat-form-field class="form-field" appearance="outline">
                 <mat-label>Nome Dependente</mat-label>
@@ -83,7 +83,7 @@
 
               <mat-form-field class="form-field" appearance="outline">
                 <mat-label>Nascimento Dependente</mat-label>
-                <input ngModel formControlName="dependenteNascimento" type="date" matInput>
+                <input formControlName="dependenteNascimento" type="text" date='dd/MM/yyyy' matInput placeholder="dd/mm/yyyy">
               </mat-form-field>
 
               <mat-form-field class="form-field" appearance="outline">

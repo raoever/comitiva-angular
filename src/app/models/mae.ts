@@ -1,5 +1,5 @@
 export interface Mae {
-  maeId: string;
+//   maeId: string;
   maeNome: string;
   maeNascimento: string;
   maeTurma: string;

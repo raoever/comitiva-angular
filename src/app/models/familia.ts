@@ -1,7 +1,7 @@
 import {Dependente} from "./dependente"
 
 export interface Familia{
-  familiaId: string;
+  _id: string;
   endereco: string;
   paiNome: string;
   paiNascimento: string;

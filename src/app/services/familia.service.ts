@@ -18,23 +18,34 @@ export class FamiliaService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  getFamilias(): Observable<Familia[]> {
+  getFamilias (): Observable<Familia[]> {
       return this.httpClient
         .get<Familia[]>(`${this.url}/cadastro`)
         .pipe(retry(2), catchError(this.handleError));
   }
 
-  delFamilia(id: number): Observable<Familia> {
+  getFamiliaById (id: string): Observable<Familia> {
+    return this.httpClient
+      .get<Familia>(`${this.url}/cadastro/familia/${id}`)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+
+  delFamilia (id: string): Observable<Familia> {
     return this.httpClient
       .delete<Familia>(`${this.url}/cadastro/familia/${id}`)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  public addFamilia(familia: Familia): Observable<Familia> {
+  public addFamilia (familia: Familia): Observable<Familia> {
       return this.httpClient.post<Familia>(`${this.url}/cadastro/familia`, familia)
+  }
+
+  public updateFamilia (familia: Familia): Observable<Familia> {
+        return this.httpClient.put<Familia>(`${this.url}/cadastro/familia`, familia)
     }
 
-  handleError(error: HttpErrorResponse) {
+  handleError (error: HttpErrorResponse) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       // Erro ocorreu no lado do client

@@ -40,41 +40,36 @@ export class FormFamiliaComponent {
   }
 
   ngOnInit(): void {
-//     this.route.paramMap.subscribe(params => {
-//       const candId = params;
-//       const id = Number(candId.get("id"));
-//       if (id != 0) {
-//         this.familiaService.getfamiliaById(Number (id)).subscribe(
-//           (candi => {
-//             this.familiaForm.patchValue({
-//               id: candi.id,
-//               nomefamilia: candi.nomefamilia,
-//               loginfamilia: candi.loginfamilia,
-//               senha: candi.senha,
-//               cpf: candi.cpf,
-//               rg: candi.rg,
-//               dataEmissaoRG: candi.dataEmissaoRG,
-//               dataNascimento: candi.dataNascimento,
-//               sexo: candi.sexo,
-//               estadoCivil: candi.estadoCivil,
-//               endereco: candi.endereco,
-//               bairro: candi.bairro,
-//               cidade: candi.cidade,
-//               uf: candi.uf,
-//               cep: candi.cep,
-//               email: candi.email,
-//               telefone: candi.telefone,
-//               notificacao: candi.notificacao,
-//             });
-//             let experiencias = candi.experiencias;
-//             for (let experiencia of experiencias) {
-//               this.addExperienciaExistente(experiencia);
-//             }
-//           }),
-//           (error: any) => console.log(error)
-//         );
-//       }
-//     });
+    this.route.paramMap.subscribe(params => {
+      const familiaId = params;
+      const id = String(familiaId.get("id"));
+      console.log(id);
+      if (id.length == 24 ) {
+        this.familiaService.getFamiliaById(String (id)).subscribe(
+          (familia => {
+            this.familiaForm.patchValue({
+              id: familia._id,
+              endereco: familia.endereco,
+              paiNome: familia.paiNome,
+              paiNascimento: familia.paiNascimento,
+              paiTurma: familia.paiTurma,
+              paiContato: familia.paiContato,
+              paiOcupacao: familia.paiOcupacao,
+              maeNome: familia.maeNome,
+              maeNascimento: familia.maeNascimento,
+              maeOcupacao: familia.maeOcupacao,
+              maeTurma: familia.maeTurma,
+              maeContato: familia.maeContato,
+            });
+            let dependentes = familia.dependentes;
+            for (let dependente of dependentes) {
+              this.addDependenteExistente(dependente);
+            }
+          }),
+          (error: any) => console.log(error)
+        );
+      }
+    });
   }
 
   dependentes(): FormArray {
@@ -83,7 +78,7 @@ export class FormFamiliaComponent {
 
   newDependente(): FormGroup {
     return this.fb.group({
-      dependenteId: '',
+//       dependenteId: '',
       dependenteNome: '',
       dependenteNascimento: '',
       dependenteParentesco: '',
@@ -111,11 +106,11 @@ export class FormFamiliaComponent {
     }
   }
 
-  addDependenteExistente(dependente: Dependente) {
+  addDependenteExistente (dependente: Dependente) {
     // @ts-ignore
     document.getElementById('divDependente').hidden = false;
     this.dependentes().push(this.fb.group({
-      dependenteId: dependente.dependenteId,
+//       dependenteId: dependente.dependenteId,
       dependenteNome: dependente.dependenteNome,
       dependenteNascimento: dependente.dependenteNascimento,
       dependenteParentesco: dependente.dependenteParentesco,
@@ -131,15 +126,31 @@ export class FormFamiliaComponent {
 
 
   onSubmit() {
-    console.log(this.familiaForm.value);
+    console.log("submit: ");
+    console.log(this.familiaForm.value.id);
+
+    if(this.familiaForm.value.id != null){
     this.familiaService.addFamilia(this.familiaForm.value).subscribe(
-      (response: Familia) => {
-        console.log(response);
-//         this.router.navigate(['/familia/']);
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
+          (response: Familia) => {
+            console.log("resposta save.");
+            console.log(response);
+            this.router.navigate(['/familia/']);
+          },
+          (error: HttpErrorResponse) => {
+            alert(error.message);
+          }
+        );
+    } else {
+    this.familiaService.updateFamilia(this.familiaForm.value).subscribe(
+              (response: Familia) => {
+                console.log("resposta save.");
+                console.log(response);
+                this.router.navigate(['/familia/']);
+              },
+              (error: HttpErrorResponse) => {
+                alert(error.message);
+              }
+            );
+    }
   }
 }

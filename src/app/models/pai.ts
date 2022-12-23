@@ -1,5 +1,5 @@
 export interface Pai {
-  paiId: string;
+//   paiId: string;
   paiNome: string;
   paiNascimento: string;
   paiTurma: string;
