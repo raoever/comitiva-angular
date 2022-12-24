@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
 import {Familia} from "../models/familia"
 import {FamiliaService} from "../services/familia.service"
 import { jqxGridComponent }  from 'jqwidgets-ng/jqxgrid';
+import { InfoFamiliaComponent } from "./info-familia/info-familia.component";
 
 @Component({
   selector: 'app-familia',
@@ -21,7 +22,7 @@ familias: any[] = [];
 @ViewChild('myGrid', { static: false }) myGrid: jqxGridComponent;
 editrow: number = -1;
 
-constructor(private familiaService: FamiliaService, private router: Router) { }
+constructor(private familiaService: FamiliaService, public dialog: MatDialog, private router: Router) { }
 
 ngAfterViewInit() {
     this.myGrid.showloadelement();
@@ -34,8 +35,14 @@ ngAfterViewInit() {
       { name: '_id', type: 'string' },
       { name: 'endereco', type: 'string' },
       { name: 'paiNome', type: 'string' },
+      { name: 'paiNascimento', type: 'string' },
+      { name: 'paiTurma', type: 'string' },
+      { name: 'paiOcupacao', type: 'string' },
       { name: 'paiContato', type: 'string' },
       { name: 'maeNome', type: 'string' },
+      { name: 'maeNascimento', type: 'string' },
+      { name: 'maeTurma', type: 'string' },
+      { name: 'maeOcupacao', type: 'string' },
       { name: 'maeContato', type: 'string' },
       { name: 'dependentes', type: 'object' },
     ],
@@ -102,6 +109,8 @@ ngAfterViewInit() {
       datafields: [
         { name: 'dependenteNome', type: 'string' },
         { name: 'dependenteParentesco', type: 'string' },
+        { name: 'dependenteTurma', type: 'string' },
+        { name: 'dependenteContato', type: 'string' },
       ],
       localdata: dependentesbyid,
     };
@@ -109,12 +118,15 @@ ngAfterViewInit() {
     if (nestedGridContainer != null) {
       let settings = {
         theme: 'material',
-        width: 780,
-        height: 200,
+        width: '100%',
+        autoheight: true,
+        autorowheight: true,
         source: nestedGridAdapter,
         columns: [
-          { text: 'Dependentes', datafield: 'dependenteNome', width: 200 },
-          { text: 'Parentesco', datafield: 'dependenteParentesco', width: 200 },
+          { text: 'Dependentes', datafield: 'dependenteNome', width: '40%' },
+          { text: 'Parentesco', datafield: 'dependenteParentesco', width: '20%' },
+          { text: 'Turma', datafield: 'dependenteTurma', width: '20%' },
+          { text: 'Contato', datafield: 'dependenteContato', width: '20%' },
         ],
       };
 
@@ -136,7 +148,7 @@ ngAfterViewInit() {
 
   rowdetailstemplate: any = {
     rowdetails: '<div id="nestedGrid" style="margin: 10px;"></div>',
-    rowdetailsheight: 220,
+    rowdetailsheight: 250,
     rowdetailshidden: true,
   };
 
@@ -146,44 +158,68 @@ ngAfterViewInit() {
 
   columns: any[] = [
       //{ text: 'ID', datafield: '_id', width: '40%' },
-      { text: 'Pai', datafield: 'paiNome', width: '20%' },
+      { text: 'Pai', datafield: 'paiNome', width: '15%' },
       { text: 'Contato', datafield: 'paiContato', width: '10%' },
-      { text: 'Mãe', datafield: 'maeNome', width: '20%' },
+      { text: 'Mãe', datafield: 'maeNome', width: '15%' },
       { text: 'Contato', datafield: 'maeContato', width: '10%' },
       { text: 'Encereço', datafield: 'endereco', width: '20%' },
       {
-        text: 'Edit',
-        datafield: 'Edit',
+        text: 'Detalhes',
+        datafield: 'Detalhes',
         columntype: 'button',
         width: '10%',
-        cellclassname: 'special',
         cellsrenderer: (): string => {
-          return 'Editar';
+          return 'Detalhes';
         },
         buttonclick: (row: number): void => {
-          //get the data and append in to the inputs
           this.editrow = row;
           let dataRecord = this.myGrid.getrowdata(this.editrow);
-          this.router.navigate(['/formfamilia/', dataRecord._id]);
-//           alert('edita: ' + dataRecord._id);
+          console.log(dataRecord._id);
+
+          const dialogRef = this.dialog.open(InfoFamiliaComponent, {
+                width: '550px',
+                data: dataRecord,
+              });
+
+              dialogRef.afterClosed().subscribe(result => {
+                console.log('The dialog was closed');
+              });
         },
       },
+
       {
-        text: 'Apagar',
-        datafield: 'Apagar',
-        columntype: 'button',
-        width: '10%',
-        cellsrenderer: (): string => {
-          return 'Apagar';
-        },
-        buttonclick: (row: number): void => {
-          this.editrow = row;
-          let dataRecord = this.myGrid.getrowdata(this.editrow);
-          this.familiaService.delFamilia(dataRecord._id).subscribe(() => console.log("user deleted"));
-          window.location.reload();
-          alert("Família Deletada.")
-        },
-      },
+              text: 'Edit',
+              datafield: 'Edit',
+              columntype: 'button',
+              width: '10%',
+              cellclassname: 'special',
+              cellsrenderer: (): string => {
+                return 'Editar';
+              },
+              buttonclick: (row: number): void => {
+                //get the data and append in to the inputs
+                this.editrow = row;
+                let dataRecord = this.myGrid.getrowdata(this.editrow);
+                this.router.navigate(['/formfamilia/', dataRecord._id]);
+              },
+            },
+
+      {
+              text: 'Apagar',
+              datafield: 'Apagar',
+              columntype: 'button',
+              width: '10%',
+              cellsrenderer: (): string => {
+                return 'Apagar';
+              },
+              buttonclick: (row: number): void => {
+                this.editrow = row;
+                let dataRecord = this.myGrid.getrowdata(this.editrow);
+                this.familiaService.delFamilia(dataRecord._id).subscribe(() => console.log("user deleted"));
+                window.location.reload();
+                alert("Família Deletada.")
+              },
+            },
     ];
 
   getFamilias() {

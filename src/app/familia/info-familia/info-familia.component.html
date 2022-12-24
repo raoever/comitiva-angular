@@ -1,0 +1,73 @@
+<h1 mat-dialog-title>Família</h1>
+<mat-dialog-content>
+<span>
+  <strong>Endereço: </strong>{{data.endereco}}
+</span><br>
+<span>
+  <strong>Nome Pai: </strong>{{data.paiNome}}
+</span><br>
+<span>
+  <strong>Nascimento Pai: </strong>{{data.paiNascimento}}
+</span><br>
+<span>
+  <strong>Turma Pai: </strong>{{data.paiTurma}}
+</span><br>
+<span>
+  <strong>Ocupação Pai: </strong>{{data.paiOcupacao}}
+</span><br>
+<span>
+  <strong>Contato Pai: </strong>{{data.paiContato}}
+</span><br>
+  <span>
+  <strong>Nome Mãe: </strong>{{data.maeNome}}
+</span><br>
+  <span>
+  <strong>Nascimento Mãe: </strong>{{data.maeNascimento}}
+</span><br>
+  <span>
+  <strong>Turma Mãe: </strong>{{data.maeTurma}}
+</span><br>
+  <span>
+  <strong>Ocupação Mãe: </strong>{{data.maeOcupacao}}
+</span><br>
+  <span>
+  <strong>Contato Mãe: </strong>{{data.maeContato}}
+</span><br>
+
+  <div *ngFor="let dependente of data.dependentes; let i = index">
+    <h1 mat-dialog-title>Dependente {{i + 1}}</h1>
+    <span>
+    <strong>Dependente Nome: </strong>{{dependente.dependenteNome}}
+  </span><br>
+    <span>
+    <strong>Dependente Nascimento: </strong>{{dependente.dependenteNascimento}}
+  </span><br>
+    <span>
+    <strong>Parentesco: </strong>{{dependente.dependenteParentesco}}
+  </span><br>
+    <span>
+    <strong>Dependente Turma: </strong>{{dependente.dependenteTurma}}
+  </span><br>
+    <span>
+    <strong>Dependente Contato: </strong>{{dependente.dependenteContato}}
+  </span><br>
+    <span>
+    <strong>Estuda: </strong>{{dependente.estuda}}
+  </span><br>
+    <span>
+    <strong>Escolaridade: </strong>{{dependente.escolaridade}}
+  </span><br>
+    <span>
+    <strong>Tamanho Pé: </strong>{{dependente.tamanhoPe}}
+  </span><br>
+    <span>
+    <strong>Tamanho Calça: </strong>{{dependente.tamanhoCalca}}
+  </span><br>
+    <span>
+    <strong>Tamanho Camisa: </strong>{{dependente.tamanhoCamisa}}
+  </span><br><br><br>
+  </div>
+</mat-dialog-content>
+<div mat-dialog-actions style="float: right">
+  <button mat-button (click)="cancel()">Fechar</button>
+</div>

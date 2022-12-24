@@ -19,15 +19,13 @@ export class FamiliaService {
   };
 
   getFamilias (): Observable<Familia[]> {
-      return this.httpClient
-        .get<Familia[]>(`${this.url}/cadastro`)
-        .pipe(retry(2), catchError(this.handleError));
+    return this.httpClient
+      .get<Familia[]>(`${this.url}/cadastro`)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   getFamiliaById (id: string): Observable<Familia> {
-    return this.httpClient
-      .get<Familia>(`${this.url}/cadastro/familia/${id}`)
-      .pipe(retry(2), catchError(this.handleError));
+    return this.httpClient.get<Familia>(`${this.url}/cadastro/familia/${id}`)
   }
 
 

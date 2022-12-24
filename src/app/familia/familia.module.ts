@@ -16,10 +16,13 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatSelectModule} from "@angular/material/select";
+import { InfoFamiliaComponent } from './info-familia/info-familia.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    InfoFamiliaComponent
+  ],
   imports: [
     CommonModule,
     FamiliaRoutingModule,
@@ -37,7 +40,7 @@ import {MatSelectModule} from "@angular/material/select";
         MatMenuModule,
         MatDialogModule,
         MatStepperModule,
-        MatSelectModule
+        MatSelectModule,
   ]
 })
 export class FamiliaModule { }
