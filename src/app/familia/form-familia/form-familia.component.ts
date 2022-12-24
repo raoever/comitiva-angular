@@ -43,7 +43,6 @@ export class FormFamiliaComponent {
     this.route.paramMap.subscribe(params => {
       const familiaId = params;
       const id = String(familiaId.get("id"));
-      console.log(id);
       if (id.length == 24 ) {
         this.familiaService.getFamiliaById(String (id)).subscribe(
           (familia => {
@@ -126,13 +125,12 @@ export class FormFamiliaComponent {
 
 
   onSubmit() {
-    console.log("submit: ");
-    console.log(this.familiaForm.value.id);
-
-    if(this.familiaForm.value.id != null){
-    this.familiaService.addFamilia(this.familiaForm.value).subscribe(
+  const idExistente = String(this.familiaForm.value.id);
+  console.log("Id Existente:  "+idExistente)
+    if(idExistente.length == 24){
+    this.familiaService.updateFamilia(idExistente, this.familiaForm.value).subscribe(
           (response: Familia) => {
-            console.log("resposta save.");
+            console.log("familia update.");
             console.log(response);
             this.router.navigate(['/familia/']);
           },
@@ -141,9 +139,9 @@ export class FormFamiliaComponent {
           }
         );
     } else {
-    this.familiaService.updateFamilia(this.familiaForm.value).subscribe(
+    this.familiaService.addFamilia(this.familiaForm.value).subscribe(
               (response: Familia) => {
-                console.log("resposta save.");
+                console.log("familia save.");
                 console.log(response);
                 this.router.navigate(['/familia/']);
               },

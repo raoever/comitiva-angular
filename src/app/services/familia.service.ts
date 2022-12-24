@@ -41,8 +41,8 @@ export class FamiliaService {
       return this.httpClient.post<Familia>(`${this.url}/cadastro/familia`, familia)
   }
 
-  public updateFamilia (familia: Familia): Observable<Familia> {
-        return this.httpClient.put<Familia>(`${this.url}/cadastro/familia`, familia)
+  public updateFamilia (id: string, familia: Familia): Observable<Familia> {
+        return this.httpClient.put<Familia>(`${this.url}/cadastro/familia/${id}`, familia)
     }
 
   handleError (error: HttpErrorResponse) {
